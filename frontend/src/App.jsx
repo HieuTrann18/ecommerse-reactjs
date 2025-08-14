@@ -1,19 +1,11 @@
 import { useState } from 'react'
-import Layout from '@components/Layout/Layout'
-import Header from '@components/Header/Header'
-import Footer from '@components/Footer/Footer'
-import Button from './components/Button/Button'
-
+import HomePage from '@components/HomePage/HomePage'
+import Info from '@components/Info/Info'
 function App() {
-  
-
   return (
     <>
-    
-          <Header />
-            Content
-          <Footer />
-     
+      <HomePage />
+      <Info />
     </>
   )
 }
