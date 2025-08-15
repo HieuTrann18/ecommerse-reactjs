@@ -1,0 +1,70 @@
+@import '@styles/mixins.module.scss';
+@import '@styles/variable.module.scss';
+
+.box_img{
+    width: 295px;
+    height: 100%;
+    position: relative;
+    
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &:hover .show_img_when_hover{
+        opacity: 1;
+        transition: opacity 500ms;
+    }
+
+    .show_img_when_hover{
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    &:hover .show_function_when_hover{
+        opacity: 1;
+        right: 18px;
+        transition: opacity 500ms, right 300ms;
+    }
+
+    .show_function_when_hover{
+        position: absolute;
+        opacity: 0;
+        right: 0px;
+        bottom: 18px;
+        background-color: white;
+    }
+
+
+    .box_icon{
+        width: 40px;
+        height: 40px;
+        @include flex_box_custom(center,center,0px);
+        cursor: pointer;
+        img{
+            width: 20px;
+            height: 20px;
+        }
+
+        &:hover{
+            background-color: #ccc;
+        }
+    }
+
+}
+
+.title{
+        font-size: 16px;
+        color: $four_color;
+        margin: 10px 0px;
+}
+.price_pr{
+        font-size: 14px;
+        color: $thr_color;
+        font-weight: 400;
+}
