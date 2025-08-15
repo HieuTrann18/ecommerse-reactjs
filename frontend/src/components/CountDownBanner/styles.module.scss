@@ -1,0 +1,27 @@
+@import '@styles/mixins.module.scss';
+@import '@styles/variable.module.scss';
+
+.container{
+    background-image: url('../../assets/icons/images/img1.png');
+    width: calc(100%/2.04);
+    height: 409px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include flex_box_custom(center, center, 12px);
+    flex-direction: column;
+
+}
+
+.title{
+    color: $four_color;
+    font-weight: 400;
+    font-size: 28px;
+}
+
+.container button{
+    margin: 0;
+}
+
+.container_timer{
+    @include flex_box_custom(center, center, 10px)
+}

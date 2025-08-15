@@ -1,0 +1,22 @@
+@import '@styles/variable.module.scss';
+@import '@styles/mixins.module.scss';
+
+.timer_box{
+    @include flex_box_custom(center, center, 5px);
+    width: 100px;
+    height: 41px;
+    margin-top: 20px;
+    
+}
+
+.time_items{
+    background-color: $white_color;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.time_items span{
+    margin-left: 5px;
+    font-size: 18px;
+    color: $secondary_color;
+}
