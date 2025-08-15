@@ -8,6 +8,7 @@ import AdvanceHealing from '@components/AdvanceHealing/AdvanceHealing';
 import Products from '@components/Products/Products';
 import {getProduct} from '../../apis/productsService';
 import PopularProducts from '../PopularProducts/PopularProducts';
+import Sales from '../Sales/Sales';
 const HomePage = () => {
 
   const [listProduct, setListProduct] = useState([])
@@ -28,6 +29,7 @@ const HomePage = () => {
         <AdvanceHealing />
         <Products data={listProduct.slice(0,2)}/>
         <PopularProducts data={listProduct.slice(3,11)}/>
+        <Sales />
         <div style={{height: '200px'}}></div>
       </div>
     </div>

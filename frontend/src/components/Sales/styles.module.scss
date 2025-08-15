@@ -1,0 +1,26 @@
+@import '@styles/mixins.module.scss';
+@import '@styles/variable.module.scss';
+
+.container{
+    @include flex_box_custom(space-between, center, 0px);
+    margin-top: 100px;
+
+    .container_content{
+        text-align: center; 
+        padding: 0px 70px;
+    }
+
+    .title{
+        font-size: 35px;
+        font-weight: 400;
+        line-height: 46px;
+    }
+    .description{
+        font-size: 16px;
+        color: $thr_color;
+        font-weight: 400;
+        line-height: 26px;
+        margin: 30px 0px;
+    }
+}
+
