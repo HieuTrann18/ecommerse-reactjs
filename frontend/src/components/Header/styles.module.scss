@@ -3,8 +3,6 @@
 
 .container{
      @include flex_box_custom(center, center, 0px);
-     position: absolute;
-     top: 0;
      left: 0;
      right: 0;
 }
@@ -58,4 +56,20 @@
 .menu:hover::after{
     opacity: 1;
     transform: scale(1);
+}
+
+.top_header{
+    position: absolute;
+    top: 0;
+}
+
+.fixed_header{
+    position: fixed;
+    top: -83px;
+    background-color: #ffffffe6;
+    z-index: 999;
+
+    transform: translateY(83px);
+    transition: transform 0.7s;
+    box-shadow: 2px 0px 12px 0px rgba(0,0,0,0.15);
 }

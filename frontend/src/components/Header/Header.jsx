@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './styles.module.scss'
 import BoxIcon from './BoxIcons/BoxIcon'
 import Menu from './Menu/Menu';
@@ -7,11 +7,28 @@ import reloadIcon from '@icons/svgs/reload.svg'
 import heartIcon from '@icons/svgs/heart.svg'
 import cartIcon from '@icons/svgs/cart.svg'
 import { dataIcons, dataMenu } from './constant';
+import useScrollHandling from '../../hooks/useScrollHandling';
+import classNames from 'classnames';
 
 const Header = () => {
-    const { container_box_icons, container_box_menu, container_header, container_box, container } = styles
+    const { container_box_icons, container_box_menu, container_header, container_box, container, fixed_header, top_header } = styles
+
+    const {scrollPosition} = useScrollHandling()
+    const [fixedHeader, setFixedHeader] = useState(false)
+
+    useEffect(() => {
+        // if(scrollPosition > 80){
+        //     setFixedHeader(true)
+        // }else{
+        //     setFixedHeader(false)
+        // }
+        scrollPosition > 80 ? setFixedHeader(true) : setFixedHeader(false)
+    }, [scrollPosition])
+
     return (
-        <div className={container}>
+        <div className={classNames(container, top_header, {
+            [fixed_header]: fixedHeader
+        })}>
               <header className={container_header}>
             <div className={container_box}>
                 <div className={container_box_icons}>

@@ -1,16 +1,14 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styles from './styles.module.scss'
 import Button from '@components/Button/Button'
-import useTranslateXImage from './translateXImage';
+import useTranslateX from '../../hooks/useTranslateX';
 const Sales = () => {
     const {container, container_content, title, description} = styles
-    const {  translateXPosition,handleTranslateX,scrollPosition} = useTranslateXImage()
+    const {  translateXPosition,handleTranslateX,scrollPosition} = useTranslateX()
 
     useEffect(() => {
         handleTranslateX()
     },[scrollPosition])
-
-
 
     return (
         <div className={container}>

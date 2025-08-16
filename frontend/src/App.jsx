@@ -1,12 +1,18 @@
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import HomePage from '@components/HomePage/HomePage'
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import routers from './routers/routers'
 function App() {
   return (
-    <>
-      <HomePage />
-
-    </>
+    <BrowserRouter>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          {routers.map((i, index) => {
+            return <Route key={index} path={i.path} element={<i.component />} />
+          })}
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
   )
 }
 
